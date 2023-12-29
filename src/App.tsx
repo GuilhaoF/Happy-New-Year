@@ -1,12 +1,13 @@
-
-import { useEffect, useState } from 'react';
-import './index.css'
+import { useEffect, useState } from "react";
+import "./index.css";
+import Modal from "./components/Modal";
 
 function App() {
   const [leftdays, setLeftDays] = useState<number>(0);
   const [lefthr, setLefthr] = useState<number>(0);
   const [leftmin, setLeftMins] = useState<number>(0);
   const [leftsec, setLeftSec] = useState<number>(0);
+  const [showModal, setShowModal] = useState<boolean>(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,7 +24,14 @@ function App() {
     return () => {
       clearInterval(interval);
     };
-  });
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowModal(false);
+    },100000);
+    return () => clearTimeout(timer);
+  }, []);
 
   if (leftdays <= -1) {
     return (
@@ -33,36 +41,39 @@ function App() {
     );
   }
 
-
   return (
+    <div className="App">
+      {showModal ? (
+        <Modal isOpen={showModal} onClose={() => setShowModal(false)} />
+      ) : (
+        <>
+          <h1>Carregando..! 2024 🎉🔥</h1>
+          <section>
+            <div className="wrapper">
+              <h2>{leftdays}</h2>
+              <h6>Days</h6>
+            </div>
+            <div className="wrapper">
+              <h2>{lefthr}</h2>
+              <h6>Hours</h6>
+            </div>
+            <div className="wrapper">
+              <h2>{leftmin}</h2>
+              <h6>Minutes</h6>
+            </div>
+            <div className="wrapper">
+              <h2>{leftsec}</h2>
+              <h6>Seconds</h6>
+            </div>
+          </section>
 
-    <div className="App" >
-    <h1>Carregando..! 2024 🎉🔥</h1>
-
-    <section>
-      <div className="wrapper">
-        <h2>{leftdays}</h2>
-        <h6>Days</h6>
-      </div>
-      <div className="wrapper">
-        <h2>{lefthr}</h2>
-        <h6>Hours</h6>
-      </div>
-      <div className="wrapper">
-        <h2>{leftmin}</h2>
-        <h6>Minutes</h6>
-      </div>
-      <div className="wrapper">
-        <h2>{leftsec}</h2>
-        <h6>Seconds</h6>
-      </div>
-    </section>
-
-
-    <a href="http://portifolio-luis-guilhaof.vercel.app">Created by Luis Felipe ❤️</a>
-
-  </div>
-  )
+          <a href="http://portifolio-luis-guilhaof.vercel.app">
+            Created by Luis Felipe ❤️
+          </a>
+        </>
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;
