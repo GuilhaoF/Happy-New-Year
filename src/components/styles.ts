@@ -11,7 +11,7 @@ export const Overlay = styled(motion.div)`
 `;
 export const ModalContainer = styled(motion.div)`
   width: 85%;
-  height: 60%;
+  height: 80%;
   background-color: white;
   position: absolute;
   top: 50%;
@@ -21,7 +21,7 @@ export const ModalContainer = styled(motion.div)`
 
   @media (min-width: 768px) {
     width: 50%;
-    height: 50%;
+    height: 90%;
 
     ul{
     margin: 0 1rem;

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./index.css";
 import Modal from "./components/Modal";
+import FinalMessage from "./components/FinalMessage";
 
 function App() {
   const [leftdays, setLeftDays] = useState<number>(0);
@@ -29,15 +30,13 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowModal(false);
-    }, 6000);
+    }, 70000);
     return () => clearTimeout(timer);
   }, []);
 
   if (leftdays <= -1) {
     return (
-      <div className="Message-App">
-        <h1>Happy New Year!!! 2024</h1>
-      </div>
+      <FinalMessage />
     );
   }
 
