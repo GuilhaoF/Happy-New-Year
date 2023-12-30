@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const newyr = new Date("January 1, 2024 00:00:00");
+      const newyr = new Date("December 30, 2023 00:00:00");
       const newyeartime = newyr.getTime();
       const todaytm = new Date();
       const todaytime = todaytm.getTime();

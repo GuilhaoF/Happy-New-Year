@@ -20,8 +20,8 @@ export const ModalContainer = styled(motion.div)`
   border-radius: 12px;
 
   @media (min-width: 768px) {
-    width: 50%;
-    height: 90%;
+    width: 20%;
+    height: 50%;
 
     ul{
     margin: 0 1rem;
