@@ -29,7 +29,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowModal(false);
-    },6000);
+    }, 6000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -42,37 +42,41 @@ function App() {
   }
 
   return (
-    <div className="App">
-      {showModal ? (
-        <Modal isOpen={showModal} onClose={() => setShowModal(false)} />
-      ) : (
-        <>
-          <h1>Carregando..! 2024 🎉🔥</h1>
-          <section>
-            <div className="wrapper">
-              <h2>{leftdays}</h2>
-              <h6>Days</h6>
-            </div>
-            <div className="wrapper">
-              <h2>{lefthr}</h2>
-              <h6>Hours</h6>
-            </div>
-            <div className="wrapper">
-              <h2>{leftmin}</h2>
-              <h6>Minutes</h6>
-            </div>
-            <div className="wrapper">
-              <h2>{leftsec}</h2>
-              <h6>Seconds</h6>
-            </div>
-          </section>
+    <>
+      <div className="stars"></div>
+      <div className="twinkling"></div>
+      <div className="App">
+        {showModal ? (
+          <Modal isOpen={showModal} onClose={() => setShowModal(false)} />
+        ) : (
+          <>
+            <h1>Carregando...! 2024 🎉🔥</h1>
+            <section>
+              <div className="wrapper">
+                <h2>{leftdays}</h2>
+                <h6>Days</h6>
+              </div>
+              <div className="wrapper">
+                <h2>{lefthr}</h2>
+                <h6>Hours</h6>
+              </div>
+              <div className="wrapper">
+                <h2>{leftmin}</h2>
+                <h6>Minutes</h6>
+              </div>
+              <div className="wrapper">
+                <h2>{leftsec}</h2>
+                <h6>Seconds</h6>
+              </div>
+            </section>
 
-          <a href="http://portifolio-luis-guilhaof.vercel.app">
-            Created by Luis Felipe ❤️
-          </a>
-        </>
-      )}
-    </div>
+            <a href="http://portifolio-luis-guilhaof.vercel.app">
+              Created by Luis Felipe ❤️
+            </a>
+          </>
+        )}
+      </div>
+    </>
   );
 }
 

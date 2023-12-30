@@ -60,14 +60,16 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
 
             <ContentModal>
             <img src={UpdateLogo} alt="update-app" />
-            <h2>Happy 2024 version  1.0 🎉</h2>
+            <h2>Happy 2024 version  1.0.2 🎉</h2>
             <span> Novas Melhorias : </span>
 
             <ul>
               <li>Melhorias no loading da pagina</li>
               <li>Corrigido bugs de codigo</li>
-              <li>Corrigido Css do modal</li>
+              <li>Corrigido css do modal</li>
               <li>Melhoria na animaçao quando chegar o  grande dia</li>
+              <li>Corrigido bug de setTimeout do modal</li>
+              <li>Adicionado acessibilidade</li>
             </ul>
            
             </ContentModal>
