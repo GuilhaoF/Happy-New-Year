@@ -60,7 +60,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
 
             <ContentModal>
             <img src={UpdateLogo} alt="update-app" />
-            <h2>Happy 2024 version  1.1.2 🎉</h2>
+            <h2>Happy 2024 version  1.1.5 🎉</h2>
             <span> Novas Melhorias : </span>
 
             <ul>
